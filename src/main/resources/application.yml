@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    stream:
+      default:
+        group: my-consumer-group
+        consumer:
+          auto-commit-offset: false
+      kafka:
+        binder:
+          brokers:
+            - 127.0.0.1:9092
+          required-acks: -1
+          producer-properties:
+            retries: 2147483647
+#        bindings:
+#          input:
+#            consumer:
+#              auto-commit-offset: false #
+      bindings:
+        input:
+          destination: test-topic
+        output:
+          destination: test-topic
