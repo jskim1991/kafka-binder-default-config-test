@@ -3,9 +3,10 @@ spring:
     stream:
       default:
         group: my-consumer-group
-        consumer:
-          auto-commit-offset: false
       kafka:
+        default:
+          consumer:
+            auto-commit-offset: false
         binder:
           brokers:
             - 127.0.0.1:9092
